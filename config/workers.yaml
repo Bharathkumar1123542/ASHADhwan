@@ -1,0 +1,6 @@
+# config/workers.yaml – seed worker profiles (spec.md §8.4)
+# worker_id values are stable keys and MUST NOT change after records exist.
+workers:
+  - {worker_id: "w_en_01", display_name: "Anita (English)", language: "en"}
+  - {worker_id: "w_hi_01", display_name: "Sunita (Hindi)", language: "hi"}
+  - {worker_id: "w_kn_01", display_name: "Lakshmi (Kannada)", language: "kn"}

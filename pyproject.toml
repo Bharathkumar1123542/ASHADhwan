@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ashadhwani"
+version = "0.1.0"
+description = "ASHA Voice Visit Recorder"
+requires-python = ">=3.11"
+dependencies = [
+    # Web framework and server
+    "fastapi==0.115.5",
+    "uvicorn[standard]==0.32.1",
+    # Gnani WebSocket streams (A-01)
+    "websockets==13.1",
+    # Gemini SDK (Section 2.4)
+    "google-genai==0.8.0",
+    # Validation (Section 2.4)
+    "pydantic==2.10.2",
+    # Config files (Section 2.4)
+    "PyYAML==6.0.2",
+    # VAD (SD-15)
+    "webrtcvad-wheels==2.0.14",
+    # Time zones – stdlib zoneinfo; tzdata needed on Windows (Section 2.4)
+    "tzdata==2024.2",
+    # HTTP test client
+    "httpx==0.28.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==8.3.4",
+    "pytest-asyncio==0.24.0",
+    "httpx==0.28.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*", "tests*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

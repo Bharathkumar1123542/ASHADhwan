@@ -1,0 +1,92 @@
+# config/app.yaml – application configuration
+# Step 0 fills gnani.* from docs (unverified until spike scripts are run).
+# All other values are the spec.md Section 2.5 defaults.
+
+server:
+  host: 127.0.0.1
+  port: 8000
+  allowed_origins: ["http://127.0.0.1:8000", "http://localhost:8000"]
+
+timezone: Asia/Kolkata
+
+audio:
+  sample_rate_hz: 16000
+  frame_ms: 100
+  frame_bytes: 3200
+  max_inbound_frame_bytes: 32000
+  playback_tail_ms: 150
+
+vad:
+  vad_silence_ms: 1500
+  aggressiveness: 2
+  min_speech_ms: 200
+  preroll_ms: 300
+  final_wait_ms: 1000
+
+llm:
+  model: ""                       # Step 7 (OI-03). GEMINI_MODEL overrides it.
+  timeout_ms: 4000
+  temperature: 0
+  danger_context_chars: 2000
+
+form:
+  weight_min_kg: 0.5
+  weight_max_kg: 150.0
+  next_visit_max_days: 365
+  name_max_chars: 100
+  vaccinations_max: 10
+  vaccination_max_chars: 60
+  notes_max_chars: 1000
+  beneficiary_id_regex: "^[A-Z0-9]{6,16}$"
+
+resilience:
+  retry_backoff_ms: [500, 1000, 2000]
+  background_retry_s: 10
+  resume_window_s: 120
+
+retention:
+  debug_days: 7
+
+# gnani.* – Step 0 (OI-01).
+# Values below come from docs.gnani.ai and are marked "from docs, unverified"
+# in docs/gnani_contract.md.  Run scripts/spike_stt.py and scripts/spike_tts.py
+# to confirm, then update docs/gnani_contract.md status to "confirmed".
+gnani:
+  # WebSocket endpoints (from docs, unverified)
+  stt_url: "wss://api.vachana.ai/stt/v3/stream"
+  tts_url: "wss://api.vachana.ai/api/v1/tts"
+
+  # Models (from docs, unverified)
+  stt_model: "prisma-v3.0"
+  tts_model: "timbre-v3.0"
+
+  # STT language codes per app language (from docs, unverified)
+  stt_language_codes:
+    en: "en-IN"
+    hi: "hi-IN"
+    kn: "kn-IN"
+
+  # TTS language codes per app language (from docs, unverified)
+  tts_language_codes:
+    en: "en-IN"
+    hi: "hi-IN"
+    kn: "kn-IN"
+
+  # Timbre v3.0 voices per app language (from docs, unverified)
+  # Chosen from the docs' "Recommended voices by language" table.
+  tts_voices:
+    en: "Sunaina"    # recommended en-IN voice (Timbre v3.0)
+    hi: "Shivani"    # recommended hi-IN voice (Timbre v3.0)
+    kn: "Sneha"      # recommended kn-IN voice (Timbre v3.0)
+
+  # Vocabulary hints via keyterms header (Prisma v3.0, from docs, unverified)
+  # Set to false if the spike shows keyterms degrade accuracy.
+  stt_vocabulary_hints: true
+
+  # STT frame size required by Gnani docs (1024 bytes = 512 samples at 16 kHz)
+  # (from docs, unverified) – gnani/stt.py re-chunks to this size before sending.
+  stt_frame_bytes: 1024
+
+  # TTS output sample rate requested (from docs, unverified)
+  # Confirmed actual rate: TODO – fill in after spike_tts.py run.
+  tts_sample_rate_hz: 16000

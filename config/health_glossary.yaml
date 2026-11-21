@@ -1,0 +1,24 @@
+# config/health_glossary.yaml – seed health glossary (spec.md §8.3)
+#
+# Each entry has a canonical ``term`` and a list of spoken ``variants``.
+# An empty variants list is valid.
+# The Step 0 spike and OI-02 review will extend entries, especially for Kannada.
+# This list is sent to Gnani STT as vocabulary hints (FR-VC-05) and included in
+# every Gemini extraction prompt (spec.md §6.1).
+
+terms:
+  - {term: "TT injection",    variants: ["TT ka injection", "tetanus injection", "टीटी इंजेक्शन"]}
+  - {term: "ANC checkup",     variants: ["ANC check-up", "ANC jaanch", "ANC जाँच"]}
+  - {term: "PNC",             variants: ["PNC visit", "पीएनसी"]}
+  - {term: "IFA goli",        variants: ["IFA tablet", "IFA gooli", "आईएफए गोली"]}
+  - {term: "BCG",             variants: ["बीसीजी"]}
+  - {term: "OPV",             variants: ["polio drops", "oral polio vaccine", "ओपीवी"]}
+  - {term: "pentavalent",     variants: ["penta", "पेंटावैलेंट"]}
+  - {term: "rotavirus",       variants: ["rota", "रोटावायरस"]}
+  - {term: "measles-rubella", variants: ["MR vaccine", "MR", "खसरा रूबेला"]}
+  - {term: "vitamin A",       variants: ["vitamin A dose", "विटामिन ए"]}
+  - {term: "Hepatitis B",     variants: ["Hep B", "hepatitis B birth dose", "हेपेटाइटिस बी"]}
+  - {term: "HBNC",            variants: ["home based newborn care", "एचबीएनसी"]}
+  - {term: "PHC",             variants: ["primary health centre", "पीएचसी"]}
+  - {term: "ANM",             variants: ["auxiliary nurse midwife", "एएनएम"]}
+  - {term: "MCP card",        variants: ["mother child protection card", "MCP कार्ड"]}

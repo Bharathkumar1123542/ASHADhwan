@@ -1,0 +1,39 @@
+# config/danger_lexicon.yaml – seed danger sign phrase lists (spec.md §8.2, A-11)
+#
+# Terms are listed in native script and in Latin transliteration so the matcher
+# works regardless of which script Prisma v3.0 returns for a given language (OI-01c).
+# The union of all three languages is used per list; workers mix languages.
+# Terms are stored lowercase (the form after normalization in §7.5.1).
+#
+# OI-02: a native-speaker and clinical reviewer will extend and tighten these
+# lists in Step 14.
+
+bleeding_terms:
+  en: ["bleeding", "blood coming"]
+  hi: ["खून आ रहा", "खून बह", "रक्तस्राव", "ब्लीडिंग", "khoon aa raha", "khoon beh", "bleeding"]
+  kn: ["ರಕ್ತಸ್ರಾವ", "ರಕ್ತ ಬರ್ತಿದೆ", "ರಕ್ತ ಬರುತ್ತಿದೆ", "ಬ್ಲೀಡಿಂಗ್", "rakta barutide", "raktasrava"]
+
+pregnancy_terms:
+  en: ["pregnant", "pregnancy", "anc"]
+  hi: ["गर्भवती", "गर्भावस्था", "प्रेग्नेंट", "garbhvati"]
+  kn: ["ಗರ್ಭಿಣಿ", "ಗರ್ಭಾವಸ್ಥೆ", "garbhini"]
+
+fever_terms:
+  en: ["fever"]
+  hi: ["बुखार", "bukhar"]
+  kn: ["ಜ್ವರ", "jwara"]
+
+intensity_terms:
+  en: ["high", "very high"]
+  hi: ["तेज़", "तेज", "बहुत", "tez", "bahut"]
+  kn: ["ಹೆಚ್ಚು", "ಜಾಸ್ತಿ", "heccu", "jasti"]
+
+newborn_terms:
+  en: ["newborn", "baby", "infant"]
+  hi: ["नवजात", "बच्चा", "शिशु", "navjaat"]
+  kn: ["ನವಜಾತ", "ಮಗು", "navajata", "magu"]
+
+negation_terms:
+  en: ["no", "not", "without"]
+  hi: ["नहीं", "नही", "nahi"]
+  kn: ["ಇಲ್ಲ", "illa"]

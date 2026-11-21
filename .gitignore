@@ -1,6 +1,8 @@
-# Environment variables
+# Environment variables and secrets
 .env
+.env.*
 .env.local
+!.env.example
 
 # Virtual environments
 .venv/
