@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#117D73" />
+<title>ASHADhwani — Voice Field Register</title>
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo">आ</span><div><b>ASHADhwani</b><small>Voice Field Register</small></div></div>
+    <nav id="nav"></nav>
+    <div class="side-foot"><small>Synthetic data only.<br>Nothing saves without your confirmation.</small></div>
+  </aside>
+
+  <div class="main">
+    <header class="bar">
+      <div class="bar-brand"><span class="logo sm">आ</span>ASHADhwani</div>
+      <div class="bar-right">
+        <select id="workerSelect" class="wsel" aria-label="Worker"></select>
+        <span id="langBadge" class="lang">EN</span>
+        <span id="connDot" class="dot" title="Server connection"></span>
+      </div>
+    </header>
+
+    <div id="dangerBanner" class="danger hidden" role="alert" aria-live="assertive">
+      <div class="danger-icon">!</div>
+      <div class="danger-body">
+        <div class="danger-title">PHC REFERRAL ALERT</div>
+        <div id="dangerLines"></div>
+        <div id="dangerWho" class="danger-who"></div>
+        <div class="danger-note">Referral alert only. No medical diagnosis or treatment advice.</div>
+        <button class="btn-ack" type="button" data-act="ackdanger">Acknowledge</button>
+      </div>
+    </div>
+
+    <div id="notice" class="notice hidden" role="status"></div>
+    <main id="page" class="page" tabindex="-1"></main>
+  </div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>
