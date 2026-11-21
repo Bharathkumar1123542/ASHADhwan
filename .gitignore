@@ -1,0 +1,33 @@
+# Environment variables
+.env
+.env.local
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Data and SQLite
+data/
+*.db
+*.sqlite3
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
