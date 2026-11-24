@@ -5,6 +5,11 @@
 ASHADhwani (ASHA Voice Visit Recorder) is a browser-based voice agent for ASHA health workers. The worker speaks her home-visit notes in English, Hindi or Kannada, and the agent turns them into a confirmed, structured visit record and a follow-up list. No typing.
 
 Built by team Pixel Blox for the Gnani Voice Hackathon (theme: Healthcare, Voice Field Register for ASHA Workers).
+**Team members:**
+Sahithi Sangu 
+Gnaneswari Gandham
+Aishwarya Paidipati
+Bharath Vankayala
 
 ---
 
